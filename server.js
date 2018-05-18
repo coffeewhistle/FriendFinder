@@ -1,9 +1,13 @@
-var express = require("express");
-var path = require("path");
+const express = require("express");
+const path = require("path");
 
-var app = express();
-var port = process.env.PORT || 3000;
+const app = express();
+const port = process.env.PORT || 3000;
 
 app.listen(port, function() {
     console.log("App listening on port: " + port);
+});
+
+app.get("/", function(req, res) {
+    res.end("It loaded!");
 });
