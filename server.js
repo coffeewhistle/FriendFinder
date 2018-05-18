@@ -9,5 +9,5 @@ app.listen(port, function() {
 });
 
 app.get("/", function(req, res) {
-    res.end("It loaded!");
+    res.sendFile(path.join(__dirname, "index.html"));
 });
