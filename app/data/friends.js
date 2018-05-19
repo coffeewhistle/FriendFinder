@@ -15,10 +15,14 @@ let questions = [
 
 for (let i = 0; i < questions.length; i++) {
     const e = questions[i];
-    let $div = $("<div>");
-    let $label = $("<label>");
-    let $input = $("<input>");
+    let survey = $("#questions");
+    let $div = $("<div>").addClass("form-group");
+    let $label = $("<label>").attr("for", "question" + i);
+    let $input = $("<select>").addClass("form-control").attr("for", "question" + i);
 
+    $label.text(questions[i]);
     
+
+    survey.append($div);
     
 }
