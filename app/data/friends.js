@@ -1,4 +1,7 @@
 /* jshint esversion: 6 */
+let mysql = require("mysql");
+let path = require("path");
+let bodyParser = require("body-parse");
 
 let questions = [
     "Your mind is always buzzing with unexplored ideas and plans.",
@@ -18,11 +21,18 @@ for (let i = 0; i < questions.length; i++) {
     let survey = $("#questions");
     let $div = $("<div>").addClass("form-group");
     let $label = $("<label>").attr("for", "question" + i);
-    let $input = $("<select>").addClass("form-control").attr("for", "question" + i);
+    let $select = $("<select>").addClass("form-control").attr("id", "question" + i);
+    let options =
+        `<option>1 (Strongly Disagree)</option>
+        <option>2</option>
+        <option>3 (King of Agree)</option>
+        <option>4</option>
+        <option>5 (Strongly Agree)</option>`;
 
+    $select.append(options);
     $label.text(questions[i]);
-    
-
+    $div.append($label);
+    $div.append($select);
     survey.append($div);
-    
 }
+
