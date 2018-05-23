@@ -30,7 +30,7 @@ for (let i = 0; i < questions.length; i++) {
         <option>5 (Strongly Agree)</option>`;
 
     $select.append(options);
-    $label.text(questions[i]);
+    $label.text("Question: " + questions[i]+1);
     $div.append($label);
     $div.append($select);
     survey.append($div);
